@@ -1,0 +1,6 @@
+[submodule "db"]
+	path = db
+	url = https://github.com/stackdb-info/db
+[submodule "yml_to_graphql"]
+	path = yml_to_graphql
+	url = https://github.com/stackdb-info/yml_to_graphql
