@@ -23,6 +23,7 @@ jobs:
       run: |
         npm i
         npm run build
+        mv build ..
     - name: Copy build files via SSH
       uses: appleboy/scp-action@master
       with:
@@ -30,5 +31,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "./website/build"
+        source: "build"
         target: "/var/www/stackdb"
+        rm: true
