@@ -30,7 +30,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "website/build"
+        source: "./website/build"
         strip_components: 2
         target: "/var/www/stackdb"
         rm: true
