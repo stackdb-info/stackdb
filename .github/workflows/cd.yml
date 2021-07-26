@@ -45,8 +45,11 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         script: |
-          cd stackdb/yml_to_graphql
+          cd stackdb
+          git pull
+          git submodule update --init --recursive
+          cd yml_to_graphql
           npm i
           cd ..
           ./populate_db.sh
-          
+          ./query_all_db.sh
