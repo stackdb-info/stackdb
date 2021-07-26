@@ -28,7 +28,7 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        key: ${{ secrets.KEY }}
         source: "./website/build"
         target: "/var/www/stackdb"
