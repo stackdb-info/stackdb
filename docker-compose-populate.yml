@@ -21,7 +21,7 @@ services:
     volumes:
       - /tmp/data:/dgraph
     ports:
-      - 8080:8086 # Change the port in populate mode so nginx will return 502 to clients
+      - 8086:8080 # Change the port in populate mode so nginx will return 502 to clients
       - 9080:9080
     restart: on-failure
     command: dgraph alpha --my=alpha:7080 --zero=zero:5080 --security whitelist=0.0.0.0:255.255.255.255
