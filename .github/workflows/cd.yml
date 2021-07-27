@@ -46,10 +46,13 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         script: |
           cd stackdb
+          docker-compose down
           git pull
           git submodule update --init --recursive
           cd yml_to_graphql
           npm i
           cd ..
+          docker-compose -f docker-compose-populate.yml up -d && sleep 15
           ./populate_db.sh
-          ./query_all_db.sh
+          docker-compose -f docker-compose-populate.yml down
+          docker-compose up -d
