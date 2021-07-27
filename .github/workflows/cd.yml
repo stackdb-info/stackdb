@@ -52,7 +52,8 @@ jobs:
           cd yml_to_graphql
           npm i
           cd ..
-          docker-compose -f docker-compose-populate.yml up -d && sleep 15
+          docker-compose -f docker-compose-populate.yml up -d
+          sleep 20
           ./populate_db.sh
           docker-compose -f docker-compose-populate.yml down
           docker-compose up -d
