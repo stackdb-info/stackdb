@@ -55,5 +55,6 @@ jobs:
             docker-compose -f docker-compose-populate.yml up -d
             sleep 25
             ./populate_db.sh
+            ./query_all_db.sh
             docker-compose -f docker-compose-populate.yml down
             docker-compose up -d
