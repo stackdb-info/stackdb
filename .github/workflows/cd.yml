@@ -44,6 +44,7 @@ jobs:
           port: ${{ secrets.PORT }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+          script_stop: true
           script: |
             cd stackdb
             docker-compose down
