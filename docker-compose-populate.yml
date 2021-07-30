@@ -10,7 +10,7 @@ services:
   zero:
     image: dgraph/dgraph:latest
     volumes:
-      - /tmp/data:/dgraph
+      - ./dgraph-volume:/dgraph
     ports:
       - 5080:5080
       - 6080:6080
@@ -19,7 +19,7 @@ services:
   alpha:
     image: dgraph/dgraph:latest
     volumes:
-      - /tmp/data:/dgraph
+      - ./dgraph-volume:/dgraph
     ports:
       - 8086:8080 # Change the port in populate mode so nginx will return 502 to clients
       - 9080:9080
