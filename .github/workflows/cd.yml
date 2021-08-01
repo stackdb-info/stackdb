@@ -48,7 +48,7 @@ jobs:
           script: |
             cd stackdb
             docker-compose down
-            git pull --recurse-submodules
+            git submodule update --recursive --remote
             cd yml_to_graphql
             npm i
             cd ..
